@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kasyno Ruletka</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: radial-gradient(circle, #000000 60%, #8B0000);
+      font-family: 'Orbitron', sans-serif;
+      color: gold;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .container {
+      display: flex;
+      width: 200vw;
+      transition: transform 1s ease-in-out;
+    }
+    .screen {
+      width: 100vw;
+      height: 100vh;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .start-screen h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .start-screen p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: #ccc;
+    }
+    .emoji-button {
+      font-size: 4rem;
+      cursor: pointer;
+      animation: pulse 1.2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="mainContainer">
+    <div class="screen start-screen">
+      <h1>Kasyno Królewskie</h1>
+      <p>Kliknij, aby rozpocząć grę w ruletkę</p>
+      <div class="emoji-button" onclick="startGame()">🎰</div>
+    </div>
+    <div class="screen game-screen">
+      <h2>Witaj w ruletce!</h2>
+      <p>Tu będzie interfejs gry.</p>
+    </div>
+  </div>
+
+  <script>
+    function startGame() {
+      document.getElementById('mainContainer').style.transform = 'translateX(-100vw)';
+    }
+  </script>
+</body>
+</html>
